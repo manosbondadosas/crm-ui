@@ -29,20 +29,22 @@
 </template>
 
 <script>
-import fecha from "fecha";
-
 export default {
-  name: "FooterSlot",
+  name: "footer-slot",
   props: {
     app: {
       type: Boolean,
       default: true,
     },
   },
-  data() {
-    return {
-      fecha,
-    };
-  },
+  data: () => ({
+    icons: [
+      "fab fa-facebook",
+      "fab fa-twitter",
+      "fab fa-google-plus",
+      "fab fa-linkedin",
+      "fab fa-instagram",
+    ],
+  }),
 };
 </script>

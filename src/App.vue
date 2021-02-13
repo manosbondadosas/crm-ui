@@ -32,20 +32,24 @@
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
+    <side-bar></side-bar>
+    <v-main>
+      <router-view></router-view>
+    </v-main>
 
-    <v-main> </v-main>
-
-    <FooterSlot />
+    <footer-slot />
   </v-app>
 </template>
 
 <script>
+import SideBar from "@/components/layaout/sideBar";
 import FooterSlot from "@/components/layaout/footerSlot";
 
 export default {
   name: "App",
   components: {
     FooterSlot,
+    SideBar,
   },
 };
 </script>
