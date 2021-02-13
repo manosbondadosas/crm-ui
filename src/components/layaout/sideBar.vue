@@ -47,8 +47,8 @@ export default {
       miniVariant: false,
       expandOnHover: false,
       background: false,
-      bottom: false,
-      clipped: true,
+      bottom: true,
+      clipped: false,
       height: "100%",
     };
   },
