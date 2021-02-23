@@ -1,14 +1,10 @@
 <template>
   <div>
-    <v-app-bar
-      :clipped-left="$vuetify.breakpoint.lgAndUp"
-      app
-      color="primary"
-      dark
-      :src="bg"
-    >
+    <v-app-bar :clipped-left="true" app color="primary" dark :src="bg">
       <v-toolbar-title style="width: 300px" class="ml-0">
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon
+          @click="handleNavClick('navClick')"
+        ></v-app-bar-nav-icon>
         <span class="hidden-sm-and-down mx-2">Manos Bondadosas</span>
       </v-toolbar-title>
 
@@ -19,7 +15,7 @@
           @submit.prevent="search"
         >
           <v-text-field
-            v-model="q"
+            v-model="query"
             flat
             hide-details
             solo-inverted
@@ -44,11 +40,20 @@ import bg from "@/assets/bg.png";
 
 export default {
   name: "app-bar",
+  methods: {
+    handleNavClick(emitIdentifier) {
+      this.$emit(emitIdentifier);
+    },
+    signOut() {
+      console.log("sing out");
+    },
+  },
   data() {
     return {
       drawer: true,
+      username: "Admin",
+      query: "",
       bg,
-      username: "Admin"
     };
   },
 };

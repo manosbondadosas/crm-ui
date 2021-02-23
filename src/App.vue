@@ -1,28 +1,38 @@
 <template>
   <v-app>
-    <app-bar />
+    <app-bar @navClick="toggleSideBar" />
 
-    <!-- <side-bar /> -->
+    <side-bar :show="showSideBar" class="pr-3" />
 
-    <!-- <v-content>
-      <router-view></router-view>
-    </v-content> -->
+    <v-main>
+      <router-view class="pl-4"></router-view>
+    </v-main>
 
-    <!-- <footer-slot /> -->
+    <footer-slot />
   </v-app>
 </template>
 
 <script>
-// import SideBar from "@/components/layaout/sideBar";
 import AppBar from "@/components/layaout/appBar";
-// import FooterSlot from "@/components/layaout/footerSlot";
+import SideBar from "@/components/layaout/sideBar";
+import FooterSlot from "@/components/layaout/footerSlot";
 
 export default {
   name: "App",
   components: {
-    // FooterSlot,
     AppBar,
-    // SideBar,
+    SideBar,
+    FooterSlot,
+  },
+  data() {
+    return {
+      showSideBar: false,
+    };
+  },
+  methods: {
+    toggleSideBar() {
+      this.showSideBar = !this.showSideBar;
+    },
   },
 };
 </script>

@@ -39,11 +39,11 @@ export default {
   },
   data: () => ({
     icons: [
-      "fab fa-facebook",
-      "fab fa-twitter",
-      "fab fa-google-plus",
-      "fab fa-linkedin",
-      "fab fa-instagram",
+      "mdi-facebook",
+      "mdi-twitter",
+      "mdi-linkedin",
+      "mdi-instagram",
+      "mdi-discord",
     ],
   }),
 };
